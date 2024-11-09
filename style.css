@@ -1,0 +1,25 @@
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+#nav {
+  display: flex;
+  position: relative;
+}
+
+#portfolio {
+  position: relative;
+}
+
+#dropdown {
+  display: none;
+  position: absolute;
+  color: black;
+}
+
+#portfolio:hover #dropdown {
+  display: block;
+  background-color: white;
+  color: black;
+}
