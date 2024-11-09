@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>My Portfolio</h1>
+
+      <ul id="nav">
+        <li class="menu_item"><a href="#about">About</a></li>
+        <li class="menu_item" id="portfolio">
+          <a href="">Portfolio</a>
+          <ul class="dropdown">
+            <li><a href="#project1">Project 1</a></li>
+            <li><a href="#project2">Project 2</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="mailto:vinceli@unc.edu.com">Contact Us</a>
+        </li>
+        <li>
+          <button id="theme-toggle">Toggle Theme</button>
+        </li>
+        <script>
+          const themeToggle = document.getElementById("theme-toggle");
+          themeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+            themeToggle.textContent = document.body.classList.contains("dark")
+              ? "Switch to Light Theme"
+              : "Switch to Dark Theme";
+          });
+        </script>
+      </ul>
+    </header>
+
+    <main>
+      <!-- About Section -->
+      <div class="section" id="about">
+        <h2>About Me</h2>
+        <p>
+          Hi! I'm Vincent, a computer science and statistics student at the
+          University of North Carolina at Chapel Hill. .
+        </p>
+      </div>
+      <!-- Education Section -->
+      <div class="section">
+        <h2>Education</h2>
+        <div class="item">
+          <h3>University of North Carolina at Chapel Hill</h3>
+          <p>Bachelor of Science in Computer Science & Statistics</p>
+          <p class="date">Expected Graduation: May 2026</p>
+        </div>
+      </div>
+
+      <!-- Experiences Section -->
+      <div class="section">
+        <h2>Experiences</h2>
+        <div class="item">
+          <h3>Software Engineering Intern</h3>
+          <p>xxx Compayny - Chapel Hill, NC</p>
+          <p class="date">June 2024 - August 2024</p>
+          <p>
+            Worked on developing a client portal login page with enhanced
+            security and performance features.
+          </p>
+        </div>
+        <div class="item">
+          <h3>Tutoring Lead</h3>
+          <p>University of North Carolina at Chapel Hill</p>
+          <p class="date">January 2024 - May 2024</p>
+          <p>
+            Lead tutoring sessions in computer science fundamentals, assisting
+            students in improving their coding skills.
+          </p>
+        </div>
+        <!-- Add more experiences as needed -->
+      </div>
+    </main>
+
+    <section id="gallery">
+      <h2>My Work</h2>
+      <div id="imageGallery">
+        <div class="images">
+          <img src="https://via.placeholder.com/100" alt="Img 1" id="img1" />
+          <img
+            src="https://via.placeholder.com/200"
+            alt="Img 2"
+            id="img2"
+            style="display: none"
+          />
+          <img
+            src="https://via.placeholder.com/300"
+            alt="Img 3"
+            id="img3"
+            style="display: none"
+          />
+          <img
+            src="https://via.placeholder.com/400"
+            alt="Img 4"
+            id="img4"
+            style="display: none"
+          />
+          <img
+            src="https://via.placeholder.com/500"
+            alt="Img 5"
+            id="img5"
+            style="display: none"
+          />
+        </div>
+        <div class="button">
+          <button id="prevBtn" onclick="previousReview()">&#10094;</button>
+          <button id="nextBtn" onclick="nextReview()">&#10095;</button>
+        </div>
+      </div>
+      <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll(".images img");
+
+        function showImage(index) {
+          images.forEach((image) => {
+            image.style.display = "none";
+          });
+          images[index].style.display = "block";
+        }
+
+        function nextReview() {
+          currentImageIndex = (currentImageIndex + 1) % images.length;
+          showImage(currentImageIndex);
+        }
+
+        function previousReview() {
+          currentImageIndex =
+            (currentImageIndex - 1 + images.length) % images.length;
+          showImage(currentImageIndex);
+        }
+
+        // Initialize the first review
+        showImage(currentImageIndex);
+      </script>
+    </section>
+  </body>
+  <footer>
+    <div class="FooterLabel">
+      <p>&copy; Vincent Li</p>
+      <p>All Right Reserved</p>
+    </div>
+    <div class="PersonalInfo">
+      <address>
+        Email: <a href="mailto:vinceli@unc.edu">vinceli@unc.edu</a>
+        <br />
+      </address>
+    </div>
+
+    <div id="credits">
+      <h5>Media Credits:</h5>
+      <a
+        href="https://docs.google.com/document/d/1d3rsnkhNVNe7ioCUkfRSeWV_ZWLQ1Efp2FtFDPmTUwA"
+        >Click here to view them.</a
+      >
+    </div>
+  </footer>
+</html>
