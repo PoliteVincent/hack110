@@ -22,12 +22,6 @@ header {
   background-color: rgb(0, 48, 135, 0.9);
 }
 
-.dropdown a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
 
 #portfolio:hover .dropdown {
   display: flex;
@@ -36,7 +30,15 @@ header {
   align-items: center;
 }
 
-.menu_item {
+
+.dropdown a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.menu_item{
   color: white;
   text-decoration: none;
 }
